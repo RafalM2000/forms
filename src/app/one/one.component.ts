@@ -7,7 +7,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class OneComponent implements OnInit {
 
-  subTitle: string = 'Forms';
+  subTitle: string = 'Template driven forms';
 
   constructor() { }
 

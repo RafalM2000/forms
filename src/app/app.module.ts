@@ -1,6 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
+import { MatInputModule } from '@angular/material/input';
 
 import { AppComponent } from './app.component';
 import { OneComponent } from './one/one.component';
@@ -19,6 +20,7 @@ export const appRouter: Routes = [
   ],
   imports: [
     BrowserModule,
+    MatInputModule,
     RouterModule.forRoot(appRouter),
     BrowserAnimationsModule,
   ],
