@@ -1,0 +1,21 @@
+.jumbotron {
+  background-color: rgb(127, 177, 174);
+}
+
+h1, h2, h3 {
+  text-align: center;
+  color: white;
+}
+
+.active {
+  color:rgb(212, 194, 24);
+}
+
+a {
+  color: white;
+  font-size: 24px;
+  padding: 5px 25px 5px 25px;
+  background-color: rgb(160, 128, 128);
+  border-radius: 5px;
+  margin-left: 80px;
+}
