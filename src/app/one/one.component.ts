@@ -7,7 +7,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class OneComponent implements OnInit {
 
-  subTitle: string = 'Fetching data from JSON file';
+  subTitle: string = 'Forms';
 
   constructor() { }
 
