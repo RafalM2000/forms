@@ -3,10 +3,15 @@
 </div>
 
 <div class="container">
-  <form class="field1">
-    <mat-form-field class="example-full-width">
-      <mat-label>Favorite food</mat-label>
-      <input matInput placeholder="Ex. Pizza" value="Sushi">
+  <form class = "example" >
+    <mat-form-field class="full-width">
+      <mat-label>Author</mat-label>
+      <input matInput placeholder="Bruno Schulz" value = "name">
     </mat-form-field>
+    <mat-form-field class="full-width">
+      <mat-label>Photo</mat-label>
+      <input matInput value="birth" ngModel>
+    </mat-form-field>
+    <button mat-stroked-button color="primary" type="submit">Wyślij</button>
   </form>
 </div>
