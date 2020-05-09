@@ -7,6 +7,7 @@ import { MatButtonModule } from '@angular/material/button';
 import { AppComponent } from './app.component';
 import { OneComponent } from './one/one.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { FormsModule } from '@angular/forms';
 
 
 export const appRouter: Routes = [
@@ -26,6 +27,7 @@ export const appRouter: Routes = [
     MatButtonModule,
     RouterModule.forRoot(appRouter),
     BrowserAnimationsModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
