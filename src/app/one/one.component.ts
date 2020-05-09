@@ -14,4 +14,8 @@ export class OneComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  onSubmit(data) {
+    console.log(data);
+  }
+
 }
