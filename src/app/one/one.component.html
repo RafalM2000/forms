@@ -7,17 +7,30 @@
     <div ngModelGroup="person">
       <mat-form-field class="full-width">
         <mat-label>Author</mat-label>
-        <input matInput name = "firstName" ngModel>
+        <input type="text" matInput name = "firstName" ngModel>
       </mat-form-field>
       <mat-form-field class="full-width">
         <mat-label>Birth date</mat-label>
-        <input matInput name = "birth" ngModel>
+        <input type="text" matInput name = "birth" ngModel>
       </mat-form-field>
     </div>
     <mat-form-field class="full-width">
       <mat-label>Comments</mat-label>
-      <input matInput name = "comments" ngModel>
+      <textarea
+      (ngModel)= "comments"
+      #comments = "ngModel"
+      type="text"
+      matInput
+      cdkTextareaAutosize
+      cdkAutosizeMinRows="3"
+      name = "comments">
+      </textarea>
     </mat-form-field>
-    <button mat-stroked-button color="primary" type="submit">Wyślij</button>
+    <div *ngIf = "comments.pristine">Please enter a comment</div>
+    <button
+    mat-stroked-button
+    color="primary"
+    type="submit"
+    [disabled] = "form.invalid">Wyślij</button>
   </form>
 </div>
