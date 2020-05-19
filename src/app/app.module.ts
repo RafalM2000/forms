@@ -3,6 +3,7 @@ import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { MatInputModule } from '@angular/material/input';
 import { MatButtonModule } from '@angular/material/button';
+import {TextFieldModule} from '@angular/cdk/text-field';
 
 import { AppComponent } from './app.component';
 import { OneComponent } from './one/one.component';
@@ -25,6 +26,7 @@ export const appRouter: Routes = [
     BrowserModule,
     MatInputModule,
     MatButtonModule,
+    TextFieldModule,
     RouterModule.forRoot(appRouter),
     BrowserAnimationsModule,
     FormsModule
