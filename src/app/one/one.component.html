@@ -21,12 +21,13 @@
       #comments = "ngModel"
       type="text"
       matInput
+      required
+      minlength = "3"
       cdkTextareaAutosize
       cdkAutosizeMinRows="3"
       name = "comments">
       </textarea>
     </mat-form-field>
-    <div *ngIf = "comments.pristine">Please enter a comment</div>
     <button
     mat-stroked-button
     color="primary"
