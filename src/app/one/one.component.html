@@ -7,8 +7,15 @@
     <div ngModelGroup="person">
       <mat-form-field class="full-width">
         <mat-label>Author</mat-label>
-        <input type="text" matInput name = "firstName" ngModel>
+        <input
+        type="text"
+        matInput
+        name = "firstName"
+        #firstName = "ngModel"
+        (ngModel) = "firstName"
+        ngModel>
       </mat-form-field>
+      <div *ngIf = "firstName.pristine"><span>Pole musi zostać wypełnione</span></div>
       <mat-form-field class="full-width">
         <mat-label>Birth date</mat-label>
         <input type="text" matInput name = "birth" ngModel>
@@ -21,12 +28,13 @@
       #comments = "ngModel"
       type="text"
       matInput
+      required
+      minlength = "3"
       cdkTextareaAutosize
       cdkAutosizeMinRows="3"
       name = "comments">
       </textarea>
     </mat-form-field>
-    <div *ngIf = "comments.pristine">Please enter a comment</div>
     <button
     mat-stroked-button
     color="primary"
