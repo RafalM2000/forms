@@ -11,11 +11,28 @@ h1, h2, h3 {
   color:rgb(212, 194, 24);
 }
 
-a {
+nav {
+  margin-bottom: 40px;
+}
+
+.container-flex > a {
   color: white;
-  font-size: 24px;
+  font-size: 20px;
   padding: 5px 25px 5px 25px;
   background-color: rgb(160, 128, 128);
   border-radius: 5px;
-  margin-left: 80px;
+  margin: 10px;
+  text-align: center;
+  
+}
+
+.container-flex {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  justify-items: stretch;
+  justify-content: center;
+  align-content: stretch;
+  margin-right: 10%;
+  margin-left: 10%;
 }
