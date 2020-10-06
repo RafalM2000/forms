@@ -3,15 +3,14 @@ import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { MatInputModule } from '@angular/material/input';
 import { MatButtonModule } from '@angular/material/button';
-import { MatDatePicerModule } from '@angular/material/datepicker';
-import {TextFieldModule} from '@angular/cdk/text-field';
+import { MatNativeDateModule } from '@angular/material/core';
+import { MatDatepickerModule } from '@angular/material/datepicker';
 
 import { AppComponent } from './app.component';
 import { OneComponent } from './one/one.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { FormsModule } from '@angular/forms';
 import { TwoComponent } from './two/two.component';
-
 
 export const appRouter: Routes = [
   {path: '', component: OneComponent},
@@ -30,8 +29,8 @@ export const appRouter: Routes = [
     BrowserModule,
     MatInputModule,
     MatButtonModule,
-    MatDatePicerModule,
-    TextFieldModule,
+    MatDatepickerModule,
+    MatNativeDateModule,
     RouterModule.forRoot(appRouter),
     BrowserAnimationsModule,
     FormsModule
