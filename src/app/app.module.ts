@@ -3,8 +3,8 @@ import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { MatInputModule } from '@angular/material/input';
 import { MatButtonModule } from '@angular/material/button';
+import { MatNativeDateModule } from '@angular/material/core';
 import { MatDatepickerModule } from '@angular/material/datepicker';
-import {TextFieldModule} from '@angular/cdk/text-field';
 
 import { AppComponent } from './app.component';
 import { OneComponent } from './one/one.component';
@@ -30,7 +30,7 @@ export const appRouter: Routes = [
     MatInputModule,
     MatButtonModule,
     MatDatepickerModule,
-    TextFieldModule,
+    MatNativeDateModule,
     RouterModule.forRoot(appRouter),
     BrowserAnimationsModule,
     FormsModule
