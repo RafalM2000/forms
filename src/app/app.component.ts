@@ -9,7 +9,7 @@ import { Router } from '@angular/router';
 export class AppComponent implements DoCheck {
   title1: string = 'Angular-In-Examples';
   title2: string = 'Forms';
-  title3: string = '';
+  title3: string = 'Template driven forms';
 
   constructor(private currentRoute: Router) {}
 
