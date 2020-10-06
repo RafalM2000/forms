@@ -9,10 +9,11 @@
             </mat-form-field>
             <mat-form-field class="full-width">
                 <mat-label>Dostęność</mat-label>
-                <mat-date-range-input>
+                <mat-date-range-input [rangePicker]="picker" >
                     <input matStartDate matInput placeholder="Start">
-                    <input matEndtDate matInput placeholder="Koniec">
+                    <input matEndDate matInput placeholder="Koniec">
                 </mat-date-range-input>
+                <mat-date-range-picker #picker></mat-date-range-picker>
             </mat-form-field>
             <mat-form-field class="full-width">
                 <mat-label>Chrakterystyka</mat-label>
