@@ -10,6 +10,7 @@ import { AppComponent } from './app.component';
 import { OneComponent } from './one/one.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { FormsModule } from '@angular/forms';
+
 import { TwoComponent } from './two/two.component';
 
 export const appRouter: Routes = [
@@ -34,6 +35,7 @@ export const appRouter: Routes = [
     RouterModule.forRoot(appRouter),
     BrowserAnimationsModule,
     FormsModule
+
   ],
   providers: [],
   bootstrap: [AppComponent]

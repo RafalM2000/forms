@@ -5,14 +5,15 @@
                 <mat-label>Imię</mat-label>
                 <input 
                 type="text" 
-                matInput>
+                matInput
+                >
             </mat-form-field>
+            <!-- Material Range wprowadzony w Angular 10 -->
             <mat-form-field class="full-width">
                 <mat-label>Dostęność</mat-label>
-                <!-- Material Range wprowadzony w Angular 10 -->
                 <mat-date-range-input [rangePicker]="picker" >
                     <input matStartDate matInput placeholder="Start">
-                    <input matEndDate matInput placeholder="Koniec">
+                    <input matEndDate matInput  placeholder="Koniec">
                 </mat-date-range-input>
                 <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
                 <mat-date-range-picker #picker></mat-date-range-picker>
@@ -21,7 +22,8 @@
                 <mat-label>Chrakterystyka</mat-label>
                 <textarea 
                 type="text" 
-                matInput></textarea>
+                matInput
+                ></textarea>
             </mat-form-field>
           <button 
           type="submit"
