@@ -9,7 +9,7 @@ import { MatDatepickerModule } from '@angular/material/datepicker';
 import { AppComponent } from './app.component';
 import { OneComponent } from './one/one.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 import { TwoComponent } from './two/two.component';
 
@@ -34,7 +34,8 @@ export const appRouter: Routes = [
     MatNativeDateModule,
     RouterModule.forRoot(appRouter),
     BrowserAnimationsModule,
-    FormsModule
+    FormsModule,
+    ReactiveFormsModule
 
   ],
   providers: [],
