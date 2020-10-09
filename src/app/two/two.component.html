@@ -1,11 +1,12 @@
 <div class="container">
-    <form>
+    <form [formGroup] = "myFormModel" (ngSubmit) = "onSubmit()">
         <div>
             <mat-form-field class="full-width">
                 <mat-label>Imię</mat-label>
                 <input 
                 type="text" 
                 matInput
+                formControlName = "yourName"
                 >
             </mat-form-field>
             <!-- Material Range wprowadzony w Angular 10 -->
@@ -24,6 +25,7 @@
                 <textarea 
                 type="text" 
                 matInput
+                formControlName = "description"
                 ></textarea>
             </mat-form-field>
           <button 
