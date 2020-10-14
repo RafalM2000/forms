@@ -12,9 +12,9 @@
             <!-- Material Range wprowadzony w Angular 10 -->
             <mat-form-field class="full-width">
                 <mat-label>Dostęność</mat-label>
-                <mat-date-range-input [rangePicker]="picker" >
-                    <input matStartDate matInput placeholder="Start">
-                    <input matEndDate matInput  placeholder="Koniec">
+                <mat-date-range-input formGroupName = "availability" [rangePicker]="picker" >
+                    <input formControlName = "start" matStartDate matInput placeholder="Start">
+                    <input formControlName = "end" matEndDate matInput  placeholder="Koniec">
                 </mat-date-range-input>
                 <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
                 <mat-date-range-picker #picker></mat-date-range-picker>

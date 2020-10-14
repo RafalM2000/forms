@@ -13,6 +13,10 @@ myFormModel: FormGroup;
   constructor() {
     this.myFormModel = new FormGroup({
       yourName: new FormControl('Max'),
+      availability: new FormGroup({
+        start: new FormControl(),
+        end: new FormControl()
+      }),
       description: new FormControl('')
     });
    }
