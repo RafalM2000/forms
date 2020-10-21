@@ -6,13 +6,6 @@ describe('TwoComponent', () => {
   let component: TwoComponent;
   let fixture: ComponentFixture<TwoComponent>;
 
-  beforeEach(async(() => {
-    TestBed.configureTestingModule({
-      declarations: [ TwoComponent ]
-    })
-    .compileComponents();
-  }));
-
   beforeEach(() => {
     fixture = TestBed.createComponent(TwoComponent);
     component = fixture.componentInstance;
