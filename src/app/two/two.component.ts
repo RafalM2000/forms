@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormControl, FormGroup } from '@angular/forms';
+import { FormArray, FormControl, FormControlDirective, FormGroup } from '@angular/forms';
 
 @Component({
   selector: 'app-two',
@@ -17,7 +17,10 @@ myFormModel: FormGroup;
         start: new FormControl(),
         end: new FormControl()
       }),
-      description: new FormControl('')
+      description: new FormControl(''),
+      emails: new FormArray([
+        new FormControl()
+      ])
     });
    }
 
@@ -26,5 +29,9 @@ myFormModel: FormGroup;
 
   onSubmit() {
     console.log('Formularz: ', this.myFormModel.value);
+  }
+
+  addEmail() {
+    (this.myFormModel.get('emails') as FormArray).push(new FormControl());
   }
 }
