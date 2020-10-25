@@ -28,6 +28,15 @@
                 formControlName = "description"
                 ></textarea>
             </mat-form-field>
+            <div formArrayName = "emails">
+                <span *ngFor = "let email of myFormModel.get('emails')['controls']; let i = index">
+                    <mat-form-field class="full-width">
+                        <mat-label>Email {{i +1}}</mat-label>
+                        <input [formControlName] = "i" matInput>
+                    </mat-form-field> 
+                </span>
+            </div>
+            <button type="button" (click) = "addEmail()" mat-stroked-button>Dodaj maila</button>
           <button 
           type="submit"
           color="primary"
