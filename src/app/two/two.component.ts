@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormArray, FormControl, FormGroup } from '@angular/forms';
+import { FormArray, FormBuilder, FormControl, FormGroup } from '@angular/forms';
 
 @Component({
   selector: 'app-two',
@@ -10,19 +10,29 @@ export class TwoComponent implements OnInit {
 
 myFormModel: FormGroup;
 
-  constructor() {
-    this.myFormModel = new FormGroup({
-      yourName: new FormControl('Max'),
-      availability: new FormGroup({
-        start: new FormControl(),
-        end: new FormControl()
+  constructor(perForm: FormBuilder) {
+    this.myFormModel = perForm.group({
+      yourName: ['Olga'],
+      availability: perForm.group({
+        start: [''],
+        end: ['']
       }),
-      description: new FormControl(''),
-      emails: new FormArray([
-        new FormControl()
-      ])
+      description: [''],
+      emails: perForm.array([''])
     });
-   }
+    // this.myFormModel = new FormGroup({
+    //   yourName: new FormControl('Max'),
+    //   availability: new FormGroup({
+    //     start: new FormControl(),
+    //     end: new FormControl()
+    //   }),
+    //   description: new FormControl(''),
+    //   emails: new FormArray([
+    //     new FormControl()
+    //   ])
+    // });
+
+  }
 
   ngOnInit(): void {
   }
