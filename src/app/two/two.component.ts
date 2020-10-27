@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { FormArray, FormControl, FormControlDirective, FormGroup } from '@angular/forms';
+import { FormArray, FormBuilder, FormControl, FormGroup } from '@angular/forms';
+import { debounceTime } from 'rxjs/operators';
 
 @Component({
   selector: 'app-two',
@@ -10,19 +11,35 @@ export class TwoComponent implements OnInit {
 
 myFormModel: FormGroup;
 
-  constructor() {
-    this.myFormModel = new FormGroup({
-      yourName: new FormControl('Max'),
-      availability: new FormGroup({
-        start: new FormControl(),
-        end: new FormControl()
+  constructor(perForm: FormBuilder) {
+    this.myFormModel = perForm.group({
+      yourName: ['Olga'],
+      availability: perForm.group({
+        start: [''],
+        end: ['']
       }),
-      description: new FormControl(''),
-      emails: new FormArray([
-        new FormControl()
-      ])
+      description: [''],
+      emails: perForm.array([''])
     });
-   }
+    // this.myFormModel = new FormGroup({
+    //   yourName: new FormControl('Max'),
+    //   availability: new FormGroup({
+    //     start: new FormControl(),
+    //     end: new FormControl()
+    //   }),
+    //   description: new FormControl(''),
+    //   emails: new FormArray([
+    //     new FormControl()
+    //   ])
+    // });
+
+    this.myFormModel.get('yourName').valueChanges.pipe(
+      debounceTime(1000)
+    )
+    .subscribe(
+      value => console.log(value)
+    );
+  }
 
   ngOnInit(): void {
   }
