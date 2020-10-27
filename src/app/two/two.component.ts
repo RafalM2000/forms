@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormArray, FormBuilder, FormControl, FormGroup } from '@angular/forms';
+import { debounceTime } from 'rxjs/operators';
 
 @Component({
   selector: 'app-two',
@@ -32,6 +33,12 @@ myFormModel: FormGroup;
     //   ])
     // });
 
+    this.myFormModel.get('yourName').valueChanges.pipe(
+      debounceTime(1000)
+    )
+    .subscribe(
+      value => console.log(value)
+    );
   }
 
   ngOnInit(): void {
