@@ -51,4 +51,10 @@ myFormModel: FormGroup;
   addEmail() {
     (this.myFormModel.get('emails') as FormArray).push(new FormControl());
   }
+
+  reload() {
+    this.myFormModel.patchValue(
+      {yourName: 'Olga'}
+    );
+  }
 }
