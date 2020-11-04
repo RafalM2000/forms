@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormArray, FormBuilder, FormControl, FormGroup } from '@angular/forms';
+import { FormArray, FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 import { debounceTime } from 'rxjs/operators';
 
 @Component({
@@ -13,25 +13,17 @@ myFormModel: FormGroup;
 
   constructor(perForm: FormBuilder) {
     this.myFormModel = perForm.group({
-      yourName: ['Olga'],
+      yourName: ['Olga', Validators.required],
       availability: perForm.group({
         start: [''],
         end: ['']
       }),
-      description: [''],
+      description: ['', {
+        validators: [Validators.minLength(3)],
+        updateOn: 'submit'
+    }],
       emails: perForm.array([''])
     });
-    // this.myFormModel = new FormGroup({
-    //   yourName: new FormControl('Max'),
-    //   availability: new FormGroup({
-    //     start: new FormControl(),
-    //     end: new FormControl()
-    //   }),
-    //   description: new FormControl(''),
-    //   emails: new FormArray([
-    //     new FormControl()
-    //   ])
-    // });
 
     this.myFormModel.get('yourName').valueChanges.pipe(
       debounceTime(1000)
