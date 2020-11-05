@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormArray, FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
+import { FormArray, FormBuilder, FormControl, FormGroup, ValidationErrors, Validators } from '@angular/forms';
 import { debounceTime } from 'rxjs/operators';
 
 @Component({
@@ -19,7 +19,7 @@ myFormModel: FormGroup;
         end: ['']
       }),
       description: ['', {
-        validators: [Validators.minLength(3)],
+        validators: [Validators.minLength(3), this.customValidator],
         updateOn: 'submit'
     }],
       emails: perForm.array([''])
@@ -34,6 +34,12 @@ myFormModel: FormGroup;
   }
 
   ngOnInit(): void {
+  }
+
+  customValidator(control: FormControl): ValidationErrors | null {
+    const value = control.value || '';
+    const valid = value.match(/super/i);
+    return valid ? null : {custom: true};
   }
 
   onSubmit() {
