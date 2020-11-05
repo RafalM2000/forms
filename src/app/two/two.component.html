@@ -27,6 +27,8 @@
                 matInput
                 formControlName = "description"
                 ></textarea>
+                <mat-error *ngIf="myFormModel.get('description').hasError('minlength')">Zbyt krótka chrakterystyka</mat-error>
+                <mat-error *ngIf="myFormModel.get('description').hasError('custom')">Brak słowa kluczowego 'super'</mat-error>
             </mat-form-field>
             <div formArrayName = "emails">
                 <span *ngFor = "let email of myFormModel.get('emails')['controls']; let i = index">
