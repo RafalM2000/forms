@@ -19,7 +19,7 @@ myFormModel: FormGroup;
         end: ['']
       }),
       description: ['', {
-        validators: [Validators.minLength(3), this.customValidator],
+        validators: [],
         updateOn: 'submit'
     }],
       emails: perForm.array([''])
@@ -29,7 +29,13 @@ myFormModel: FormGroup;
       debounceTime(1000)
     )
     .subscribe(
-      value => console.log(value)
+      value => {
+        const descControll = this.myFormModel.get('description');
+        if(value === 'Sylwia') {
+          descControll.setValidators(this.customValidator);
+        }
+        descControll.updateValueAndValidity();
+      }
     );
   }
 
