@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormArray, FormBuilder, FormControl, FormGroup, ValidationErrors, Validators } from '@angular/forms';
 import { debounceTime } from 'rxjs/operators';
+import { ValidationService } from '../validation.service';
 
 @Component({
   selector: 'app-two',
@@ -11,36 +12,42 @@ export class TwoComponent implements OnInit {
 
 myFormModel: FormGroup;
 
-  constructor(perForm: FormBuilder) {
+  constructor(perForm: FormBuilder, private validationService: ValidationService) {
     this.myFormModel = perForm.group({
       yourName: ['Olga', Validators.required],
       availability: perForm.group({
         start: [''],
         end: ['']
       }),
-      description: ['', {
-        validators: [Validators.minLength(3), this.customValidator],
-        updateOn: 'submit'
-    }],
+      description: ['',
+        '',
+        validationService.customValidator
+  ],
       emails: perForm.array([''])
     });
 
-    this.myFormModel.get('yourName').valueChanges.pipe(
-      debounceTime(1000)
-    )
-    .subscribe(
-      value => console.log(value)
-    );
+    // this.myFormModel.get('yourName').valueChanges.pipe(
+    //   debounceTime(1000)
+    // )
+    // .subscribe(
+    //   value => {
+    //     const descControll = this.myFormModel.get('description');
+    //     if(value === 'Sylwia') {
+    //       descControll.setValidators(this.customValidator);
+    //     }
+    //     descControll.updateValueAndValidity();
+    //   }
+    // );
   }
 
   ngOnInit(): void {
   }
 
-  customValidator(control: FormControl): ValidationErrors | null {
-    const value = control.value || '';
-    const valid = value.match(/super/i);
-    return valid ? null : {custom: true};
-  }
+  // customValidator(control: FormControl): ValidationErrors | null {
+  //   const value = control.value || '';
+  //   const valid = value.match(/super/i);
+  //   return valid ? null : {custom: true};
+  // }
 
   onSubmit() {
     console.log('Formularz: ', this.myFormModel.value);
