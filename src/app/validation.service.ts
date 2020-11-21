@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { FormControl, ValidationErrors } from '@angular/forms'
+import { FormControl, ValidationErrors } from '@angular/forms';
 import { Observable, of } from 'rxjs';
 
 @Injectable({
