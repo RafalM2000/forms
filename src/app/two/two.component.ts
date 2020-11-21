@@ -50,7 +50,7 @@ myFormModel: FormGroup;
   // }
 
   onSubmit() {
-    console.log('Formularz: ', this.myFormModel.value);
+    console.log('Obiekt--->', this.myFormModel.get('description'));
   }
 
   addEmail() {
