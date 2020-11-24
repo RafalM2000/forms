@@ -16,7 +16,7 @@ button {
 }
 
 textarea.ng-dirty {
-  color: white
+  color: rgb(7, 73, 24)
 }
 
 textarea.ng-valid {

@@ -32,7 +32,7 @@ export const appRouter: Routes = [
     MatButtonModule,
     MatDatepickerModule,
     MatNativeDateModule,
-    RouterModule.forRoot(appRouter),
+    RouterModule.forRoot(appRouter, { relativeLinkResolution: 'legacy' }),
     BrowserAnimationsModule,
     FormsModule,
     ReactiveFormsModule
