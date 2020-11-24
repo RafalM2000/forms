@@ -14,3 +14,11 @@ button {
     margin-right: 10px;
     margin-bottom: 10px;
 }
+
+textarea.ng-dirty {
+  color: white
+}
+
+textarea.ng-valid {
+  color: greenyellow;
+}
